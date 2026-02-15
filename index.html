@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Migrated | Dinzo Apis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            background: #ffffff;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.05) 0px, transparent 50%);
+            color: #000000; 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glass {
+            background: rgba(0, 0, 0, 0.02);
+            backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-redirect {
+            background: #000000;
+            color: #ffffff;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-redirect:hover {
+            transform: scale(1.02) translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <div class="max-w-xl w-full px-6 text-center">
+        <div class="w-20 h-20 bg-black rounded-[2rem] flex items-center justify-center mx-auto mb-10 shadow-2xl rotate-3">
+            <i class="material-icons text-white text-4xl">swap_horiz</i>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-black/10 bg-black/5 mb-6">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
+            </span>
+            <span class="text-[9px] font-black uppercase tracking-widest text-blue-600">Domain Migration</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6 text-black uppercase">
+            WE HAVE <span class="text-black/20">MOVED.</span>
+        </h1>
+
+        <p class="text-black/50 text-sm md:text-base mb-12 leading-relaxed font-medium">
+            Layanan Dinzo Apis kini telah berpindah ke alamat domain baru untuk meningkatkan performa dan stabilitas infrastruktur.
+        </p>
+
+        <div class="glass p-2 rounded-2xl border border-black/5 mb-10">
+            <div class="bg-white rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+                <div class="text-left">
+                    <p class="text-[8px] font-black text-black/20 uppercase tracking-[0.2em] mb-1">New Gateway Address</p>
+                    <p class="text-lg font-bold tracking-tight text-black">dinzo.xte.web.id</p>
+                </div>
+                <a href="https://dinzo.xte.web.id" class="btn-redirect px-8 py-4 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">
+                    Visit Now
+                </a>
+            </div>
+        </div>
+
+        <p class="text-[10px] font-bold text-black/30 uppercase tracking-[0.3em] flex items-center justify-center gap-3">
+            Auto Redirect in <span id="timer" class="text-black font-black">10</span> seconds
+        </p>
+
+        <div class="mt-20 pt-8 border-t border-black/5">
+            <div class="flex items-center justify-center gap-3">
+                <div class="w-6 h-6 bg-black/5 rounded-lg flex items-center justify-center">
+                    <span class="text-black/40 font-black text-[10px]">D</span>
+                </div>
+                <span class="font-black text-[10px] tracking-tighter uppercase text-black/20">Dinzo Apis Infrastructure</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 10;
+        const timerElement = document.getElementById('timer');
+        
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                window.location.href = "https://dinzo.xte.web.id";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
